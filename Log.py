@@ -6,9 +6,9 @@ class Log:
         self.fileName = algorithm+'Log.txt'
         logFile = open(self.fileName, 'w').close()
 
-    def start(self, id):
+    def start(self, id, t):
         time = strftime("%H:%M:%S", gmtime())
-        str = time + ' {} started'.format(id)
+        str = time + '  {} started after waiting for {} seconds'.format(id, t)
         self.save(str)
 
     def pending(self, id):

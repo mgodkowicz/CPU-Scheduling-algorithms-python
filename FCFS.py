@@ -31,11 +31,12 @@ class FCFS:
 
     def run(self):
         t = 0
+        self.calculate()
+        sleep(1)
         for x in range(self.amount):
             actual_pname = str(self.processes_list[x].name)
-            self.log.start(actual_pname)
+            self.log.start(actual_pname, t-int(self.processes_list[x].arrival_time))
             for i2 in tqdm(range(self.burst_queue[x]), desc=actual_pname):
-                # do something, e.g. sleep
                 self.log.pending(actual_pname)
                 sleep(1)
                 t+=1
@@ -44,7 +45,22 @@ class FCFS:
                         tqdm.write('Process {} is waiting. Time: {}'.format(p.name, t))
                         self.log.waiting(p.name)
 
+    def calculate(self):
+        start_time = 0
+        average_wait = 0
+        m = len(self.processes_list)
+        for p in self.processes_list:
+            if int(p.arrival_time) > start_time:
+                start_time = p.arrival_time
+                p.w_time = 0
+            else:
+                p.w_time = start_time - int(p.arrival_time)
+            average_wait += p.w_time
+            p.e_time = start_time + int(p.burst_time)
+            start_time += int(p.burst_time)
 
+        print("\nTotal wait time= ", average_wait)
+        print("Average process wait time: ", float(average_wait / m))
 
 
 
