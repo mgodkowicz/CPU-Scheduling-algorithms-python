@@ -28,3 +28,9 @@ class Log:
 
         logFile.close()
 
+    def final(self, time, a):
+        str = "Total wait time: {}".format(time)
+        str2 = "Average process wait time: {}".format(time/a)
+        self.save(str)
+        self.save(str2)
+

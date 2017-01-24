@@ -1,0 +1,38 @@
+08:26:14  p1 started after waiting for 0 seconds
+08:26:14  p1 is running
+08:26:15  p1 is running
+08:26:16  p4 is waiting
+08:26:16  p2 is waiting
+08:26:16  p1 is running
+08:26:17  p6 is waiting
+08:26:17  p1 is running
+08:26:18  p5 is waiting
+08:26:18  p3 is waiting
+08:26:18  p1 is running
+08:26:19  p1 is running
+08:26:20  p1 is running
+08:26:21  p6 started after waiting for 4 seconds
+08:26:21  p6 is running
+08:26:22  p6 is running
+08:26:23  p4 started after waiting for 7 seconds
+08:26:23  p4 is running
+08:26:24  p4 is running
+08:26:25  p4 is running
+08:26:26  p5 started after waiting for 8 seconds
+08:26:26  p5 is running
+08:26:27  p5 is running
+08:26:28  p5 is running
+08:26:29  p3 started after waiting for 11 seconds
+08:26:29  p3 is running
+08:26:30  p3 is running
+08:26:31  p3 is running
+08:26:32  p3 is running
+08:26:33  p3 is running
+08:26:34  p2 started after waiting for 18 seconds
+08:26:34  p2 is running
+08:26:35  p2 is running
+08:26:36  p2 is running
+08:26:37  p2 is running
+08:26:38  p2 is running
+08:26:39  p2 is running
+Average process wait time: 12.0

@@ -13,6 +13,7 @@ class Priority():
         self.create_processes(self.process_queue)
         self.fill_queue()
         self.log = Log('Priority')
+        self.average_wait_time = 0
 
     def create_processes(self, p):
         p.sort(key=lambda words: words[2])
@@ -72,6 +73,7 @@ class Priority():
                     if int(p.arrival_time) == int(t) and str(p.name) != actual_pname:
                         tqdm.write('Process {} is waiting. Time: {}'.format(p.name, t))
                         self.log.waiting(p.name)
+        self.log.final(self.average_wait_time, self.amount)
 
     def calculate(self, write):
         start_time = 0
@@ -88,6 +90,8 @@ class Priority():
             start_time += int(p.burst_time)
 
         if write:
+            self.average_wait_time = average_wait
+
             print("\nTotal wait time= ", average_wait)
             print("Average process wait time: ", float(average_wait / m))
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from Process import Process
 from FCFS import FCFS
 from SJF import SJF
@@ -10,7 +11,6 @@ processesSJF = list()
 with open('process', 'r') as file:
     for line in file:
         words.append(line.split())
-
 
 def menu():
     print("\nWhat algorithm you want to launch?")
@@ -36,3 +36,4 @@ def menu():
 
 while(True):
     menu()
+

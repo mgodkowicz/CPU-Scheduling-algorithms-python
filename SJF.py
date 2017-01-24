@@ -13,6 +13,8 @@ class SJF:
         self.create_processes(self.process_queue)
         self.fill_queue()
         self.log = Log('SJF')
+        self.average_wait_time = 0
+        self.av_process_wait = 0
 
     def create_processes(self, p):
         p.sort(key=lambda words: words[2])
@@ -64,6 +66,7 @@ class SJF:
                     if int(p.arrival_time) == int(t) and str(p.name) != actual_pname:
                         tqdm.write('Process {} is waiting. Time: {}'.format(p.name, t))
                         self.log.waiting(p.name)
+        self.log.final(self.average_wait_time, self.amount)
 
     def calculate(self):
         start_time = 0
@@ -79,5 +82,7 @@ class SJF:
             p.e_time = start_time + int(p.burst_time)
             start_time += int(p.burst_time)
 
+        self.average_wait_time = average_wait
+        self.av_process_wait = average_wait /m
         print("\nTotal wait time= ", average_wait)
         print("Average process wait time: ", float(average_wait / m))
